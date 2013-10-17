@@ -1,18 +1,21 @@
 
-import controller.CalculatorController;
+import controller.ChangeRateController;
 import java.io.IOException;
-import model.Calculator;
-import view.CalculatorView;
+import java.util.GregorianCalendar;
+import model.ChangeRate;
+import model.Currency;
+import view.ChangeRateView;
+import model.Number;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
-            Calculator model = new Calculator();
-            CalculatorView view = new CalculatorView();
-            
-            CalculatorController controller = new CalculatorController(model, view);
-            
-            view.setVisible(true);     
+    public static void main(String[] args) throws IOException {       
+       ChangeRate model = new ChangeRate(new Number(0), new Currency("","",""), new Currency("","",""), new GregorianCalendar());
+       ChangeRateView view = new ChangeRateView();
+      
+       ChangeRateController controller = new ChangeRateController(model, view);
+
+       view.setVisible(true);
     }
 
 }
