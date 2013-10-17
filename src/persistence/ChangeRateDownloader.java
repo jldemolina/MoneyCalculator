@@ -5,7 +5,7 @@ import java.net.URL;
 import java.util.Calendar;
 import model.Currency;
 
-public class ChangeRateDonwloader {
+public class ChangeRateDownloader {
 
     private static final String URL = "http://currencies.apps.grandtrunk.net/getrate/";
 
@@ -13,7 +13,7 @@ public class ChangeRateDonwloader {
     private final Currency toCurrency;
     private final Calendar date;
 
-    public ChangeRateDonwloader(Currency fromCurrency, Currency toCurrency, Calendar date) {
+    public ChangeRateDownloader(Currency fromCurrency, Currency toCurrency, Calendar date) {
         this.fromCurrency = fromCurrency;
         this.toCurrency = toCurrency;
         this.date = date;
