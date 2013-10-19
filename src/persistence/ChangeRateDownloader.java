@@ -25,9 +25,9 @@ public class ChangeRateDownloader {
         int day = date.get(Calendar.DAY_OF_MONTH);
         int month = date.get(Calendar.MONTH);
         int year = date.get(Calendar.YEAR);
-        String changeData = year + "-" + month + "-" + day;
+        String changeDate = year + "-" + month + "-" + day;
         
-        URL url = new URL(URL + changeData + "/" + fromCurrency.getCode() + "/" + toCurrency.getCode());
+        URL url = new URL(URL + changeDate + "/" + fromCurrency.getCode() + "/" + toCurrency.getCode());
         String answer = parser.getHTTPAnswer(url);
         return Double.valueOf(answer);
     }
