@@ -71,8 +71,8 @@ public final class ChangeRateView extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    public String getAmount() {
-        return String.valueOf(amount.getText());
+    public Double getAmount() {
+        return Double.valueOf(amount.getText());
     }
 
     public String getToCurrency() {

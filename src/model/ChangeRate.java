@@ -2,7 +2,6 @@ package model;
 
 import java.io.IOException;
 import java.util.Calendar;
-import persistence.ChangeRateDownloader;
 
 public class ChangeRate {
 
@@ -17,9 +16,8 @@ public class ChangeRate {
         this.toCurrency = toCurrency;
         this.date = date;
     }
-    
+
     public Number convert() throws IOException {
-        double changeValue = new ChangeRateDownloader(fromCurrency, toCurrency, date).getChangeValue();
         return new Number(0.);
     }
 

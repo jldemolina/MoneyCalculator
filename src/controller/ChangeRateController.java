@@ -3,10 +3,11 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import model.Currency;
 import model.CurrencySet;
-import persistence.ChangeRateDownloader;
-import persistence.CurrencySetDownloader;
+import persistence.CurrencySetLoader;
 import view.ChangeRateView;
+import model.Number;
 
 public class ChangeRateController {
 
@@ -16,7 +17,7 @@ public class ChangeRateController {
         view = new ChangeRateView();
 
         try {
-            CurrencySetDownloader.getInstance().load(currencyListFile);
+            CurrencySetLoader.getInstance().load(currencyListFile);
         } catch (IOException ex) {
         }
         
@@ -35,7 +36,8 @@ public class ChangeRateController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            Number amount = new Number(view.getAmount());
+            
         }
 
     }

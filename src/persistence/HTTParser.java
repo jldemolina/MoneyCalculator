@@ -1,3 +1,4 @@
+
 package persistence;
 
 import java.io.BufferedReader;
@@ -6,16 +7,18 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
+
+
 public class HTTParser {
+
     private static HTTParser instance;
 
     private HTTParser() {
     }
 
     public static HTTParser getInstance() {
-        if (instance == null) {
+        if (instance == null)
             instance = new HTTParser();
-        }
         return instance;
     }
 
@@ -32,9 +35,8 @@ public class HTTParser {
         String inputLine;
         StringBuilder response = new StringBuilder();
 
-        while ((inputLine = in.readLine()) != null) {
+        while ((inputLine = in.readLine()) != null)
             response.append(inputLine);
-        }
 
         return response.toString();
     }

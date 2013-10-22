@@ -7,6 +7,7 @@ public class CurrencySet extends HashSet<Currency> {
     public static CurrencySet instance;
 
     private CurrencySet() {
+        super();
     }
 
     public static CurrencySet getInstance() {
@@ -14,6 +15,12 @@ public class CurrencySet extends HashSet<Currency> {
             instance = new CurrencySet();
         return instance;
     }
-    
-    
+
+    public Currency getCurrency(String code) {
+        for (Currency currency : this)
+            if (code.equals(currency.getCode()))
+                return currency;
+        return null;
+    }
+
 }

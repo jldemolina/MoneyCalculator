@@ -29,24 +29,25 @@ public class Number {
     public long getDenominator() {
         return denominator;
     }
-    
+
     @Override
-   public String toString() {
+    public String toString() {
         return numerator + "/" + denominator;
     }
-   
+
     @Override
-   public boolean equals(Object object) {
-       if (object == null) return false;
-       if (object instanceof Number)
-           return equals((Number) object);
-       return false;
-   }
-   
-   private boolean equals(Number number) {
-       return (number.numerator == numerator && number.denominator == denominator);
-   }
-   
+    public boolean equals(Object object) {
+        if (object == null)
+            return false;
+        if (object instanceof Number)
+            return equals((Number) object);
+        return false;
+    }
+
+    private boolean equals(Number number) {
+        return (number.numerator == numerator && number.denominator == denominator);
+    }
+
     public Number add(Number number) {
         final long numeratorA = getNumerator();
         final long numeratorB = number.getNumerator();
@@ -76,7 +77,7 @@ public class Number {
 
         return new Number(numeratorC, denominatorC);
     }
-    
+
     public static Number valueOf(double n) {
         String textNumber = String.valueOf(n);
         long digitsDec = textNumber.length() - 1 - textNumber.indexOf('.');
@@ -91,18 +92,17 @@ public class Number {
 
         return new Number(num, denom);
     }
-    
-   private void reduceNumber() {   
-        int[] primeNumbers = new int[]{2,3,5,7,11,13,15,17};
 
-        for (Integer prime : primeNumbers) {
+    private void reduceNumber() {
+        int[] primeNumbers = new int[]{2, 3, 5, 7, 11, 13, 15, 17};
+
+        for (Integer prime : primeNumbers)
             if (numerator % prime == 0 && denominator % prime == 0) {
                 numerator /= prime;
                 denominator /= prime;
             }
-        }
     }
-    
+
     private static long leastCommonMultiple(long numberA, long numberB) {
         return Math.abs(numberA * (numberB / greatestCommonFactor(numberA, numberB)));
     }
@@ -116,6 +116,5 @@ public class Number {
         }
         return numberA;
     }
-    
- 
+
 }
