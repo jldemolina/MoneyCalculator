@@ -19,7 +19,7 @@ public class ChangeRateLoader {
         this.date = date;
     }
 
-    public double getChangeValue() throws IOException {
+    public double load() throws IOException {
         HTTParser parser = HTTParser.getInstance();
 
         int day = date.get(Calendar.DAY_OF_MONTH);
