@@ -1,6 +1,5 @@
 package model;
 
-import java.io.IOException;
 import java.util.Calendar;
 
 public class ExchangeRate {
@@ -16,9 +15,23 @@ public class ExchangeRate {
         this.toCurrency = toCurrency;
         this.date = date;
     }
-
-    public Number convert() throws IOException {
-        return new Number(0.);
+    
+    public Number getRate() {
+        return rate;
     }
+
+    public Currency getFromCurrency() {
+        return fromCurrency;
+    }
+
+    public Currency getToCurrency() {
+        return toCurrency;
+    }
+
+    public Calendar getDate() {
+        return date;
+    }
+    
+    
 
 }
