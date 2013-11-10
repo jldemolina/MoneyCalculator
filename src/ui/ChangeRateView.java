@@ -39,7 +39,8 @@ public final class ChangeRateView extends JFrame {
         addButton = new JButton("+");
         subButton = new JButton("-");
 
-        initializeContent();
+        initializeContent(); 
+
         configureDialog();
 
     }
@@ -88,7 +89,7 @@ public final class ChangeRateView extends JFrame {
     }
 
     public void setResult(String newTotal) {
-        amount.setText(String.valueOf(newTotal));
+        resultOutput.setText(String.valueOf(newTotal));
     }
 
     public void setAmount(String newInput) {
@@ -112,6 +113,8 @@ public final class ChangeRateView extends JFrame {
             toCurrency.addItem(currency.getCode());
             fromCurrency.addItem(currency.getCode());
         }
+        toCurrency.setSelectedIndex(1);
+        fromCurrency.setSelectedIndex(1);
     }
 
 }
