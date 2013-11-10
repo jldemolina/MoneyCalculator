@@ -77,10 +77,6 @@ public class Number {
 
         return new Number(numeratorC, denominatorC);
     }
-    
-    public Number multiply(Number number) {
-        return new Number(numerator * number.getNumerator(), denominator * number.getDenominator());
-    }
 
     public static Number valueOf(double n) {
         String textNumber = String.valueOf(n);
