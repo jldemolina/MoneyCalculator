@@ -2,16 +2,16 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 import model.Currency;
 import model.CurrencySet;
 import model.ExchangeRate;
 import model.Money;
 import model.MoneyExchanger;
-import persistence.CurrencySetLoader;
 import ui.ChangeRateView;
 import model.Number;
-import persistence.ChangeRateLoader;
+import persistence.ChangeRateHTTPLoader;
+import persistence.CurrencySetFileLoader;
+import persistence.CurrencySetLoader;
 
 public class ChangeRateController {
 
@@ -20,10 +20,8 @@ public class ChangeRateController {
     public ChangeRateController(String currencyListFile) {
         view = new ChangeRateView();
 
-        try {
-            CurrencySetLoader.getInstance().load(currencyListFile);
-        } catch (IOException ex) {
-        }
+        CurrencySetLoader loader = new CurrencySetFileLoader(currencyListFile);
+        loader.load();
 
         view.setCurrencyCodes(CurrencySet.getInstance());
         view.addConvertButtonListener(new ConvertButtonListener());
@@ -46,7 +44,7 @@ public class ChangeRateController {
             Number amount = new Number(view.getAmount());
             Currency fromCurrency = CurrencySet.getInstance().search(view.getFromCurrency())[0];
             Currency toCurrency = CurrencySet.getInstance().search(view.getToCurrency())[0];
-            ExchangeRate rate  = new ChangeRateLoader().load(fromCurrency, toCurrency);
+            ExchangeRate rate  = new ChangeRateHTTPLoader().load(fromCurrency, toCurrency);
             Money money = MoneyExchanger.exchange(amount, rate);
             view.setResult(money.getAmount().toString());
         }
