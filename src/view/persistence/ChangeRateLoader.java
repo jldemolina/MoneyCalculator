@@ -1,4 +1,4 @@
-package persistence;
+package view.persistence;
 
 import java.util.Calendar;
 import model.Currency;

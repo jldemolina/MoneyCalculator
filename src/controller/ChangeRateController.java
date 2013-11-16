@@ -7,11 +7,11 @@ import model.CurrencySet;
 import model.ExchangeRate;
 import model.Money;
 import model.MoneyExchanger;
-import ui.ChangeRateView;
+import view.ui.ChangeRateView;
 import model.Number;
-import persistence.ChangeRateHTTPLoader;
-import persistence.CurrencySetFileLoader;
-import persistence.CurrencySetLoader;
+import view.persistence.ChangeRateHTTPLoader;
+import view.persistence.CurrencySetFileLoader;
+import view.persistence.CurrencySetLoader;
 
 public class ChangeRateController {
 

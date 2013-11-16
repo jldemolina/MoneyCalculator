@@ -1,4 +1,4 @@
-package ui;
+package view.ui;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;

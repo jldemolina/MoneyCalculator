@@ -1,5 +1,5 @@
 
-package persistence;
+package view.persistence;
 
 import java.io.BufferedReader;
 import java.io.IOException;

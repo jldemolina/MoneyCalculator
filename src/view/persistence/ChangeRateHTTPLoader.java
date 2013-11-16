@@ -1,4 +1,4 @@
-package persistence;
+package view.persistence;
 
 import java.io.IOException;
 import java.net.MalformedURLException;

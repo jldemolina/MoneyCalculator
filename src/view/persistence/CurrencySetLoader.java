@@ -1,4 +1,4 @@
-package persistence;
+package view.persistence;
 
 public interface CurrencySetLoader {
 
