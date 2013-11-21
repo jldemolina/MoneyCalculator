@@ -8,11 +8,11 @@ import java.io.IOException;
 import model.Currency;
 import model.CurrencySet;
 
-public class CurrencySetFileLoader implements CurrencySetLoader {
+public class FileCurrencySetLoader implements CurrencySetLoader {
 
     private final String file;
 
-    public CurrencySetFileLoader(String file) {
+    public FileCurrencySetLoader(String file) {
         this.file = file;
     }
 

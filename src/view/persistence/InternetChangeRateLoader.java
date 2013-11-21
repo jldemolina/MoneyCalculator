@@ -10,11 +10,11 @@ import model.Number;
 import model.Currency;
 import model.ExchangeRate;
 
-public class ChangeRateHTTPLoader implements ChangeRateLoader {
+public class InternetChangeRateLoader implements ChangeRateLoader {
 
     private static final String URL = "http://currencies.apps.grandtrunk.net/getrate/";
 
-    public ChangeRateHTTPLoader() {
+    public InternetChangeRateLoader() {
     }
 
     @Override
@@ -41,7 +41,7 @@ public class ChangeRateHTTPLoader implements ChangeRateLoader {
         try {
             return new URL(URL + formatDate(date) + "/" + fromCurrency.getCode() + "/" + toCurrency.getCode());
         } catch (MalformedURLException ex) {
-            Logger.getLogger(ChangeRateHTTPLoader.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(InternetChangeRateLoader.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }

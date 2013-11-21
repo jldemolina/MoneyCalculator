@@ -1,72 +1,48 @@
 package controller;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import model.Currency;
-import model.CurrencySet;
 import model.ExchangeRate;
 import model.Money;
 import model.MoneyExchanger;
-import view.ui.ChangeRateView;
-import model.Number;
-import view.persistence.ChangeRateHTTPLoader;
-import view.persistence.CurrencySetFileLoader;
+import view.persistence.ChangeRateLoader;
 import view.persistence.CurrencySetLoader;
+import view.ui.CurrencyDialog;
+import view.ui.MoneyDialog;
+import view.ui.MoneyViewer;
 
 public class ChangeRateController {
 
-    ChangeRateView view;
+    private final CurrencySetLoader currencySetLoader;
+    private final ChangeRateLoader changeRateLoader;
+    private final MoneyDialog moneyDialog;
+    private final MoneyViewer moneyViewer;
+    private final CurrencyDialog currencyDialog;
 
-    public ChangeRateController(String currencyListFile) {
-        view = new ChangeRateView();
-
-        CurrencySetLoader loader = new CurrencySetFileLoader(currencyListFile);
-        loader.load();
-
-        view.setCurrencyCodes(CurrencySet.getInstance());
-        view.addConvertButtonListener(new ConvertButtonListener());
-        view.addAddButtonListener(new AddButtonListener());
-        view.addSubButtonListener(new SubButtonListener());
-
+    public ChangeRateController(CurrencySetLoader currencySetLoader, ChangeRateLoader changeRateLoader, MoneyDialog moneyDialog, MoneyViewer moneyViewer, CurrencyDialog currencyDialog) {
+        this.currencySetLoader = currencySetLoader;
+        this.changeRateLoader = changeRateLoader;
+        this.moneyDialog = moneyDialog;
+        this.moneyViewer = moneyViewer;
+        this.currencyDialog = currencyDialog;
     }
     
     public void execute() {
-        view.setVisible(true);
+        currencySetLoader.load();
+        Money money = getMoney();
+        ExchangeRate rate  = changeRateLoader.load(money.getCurrency(), getCurrency());
+        Money resultingMoney = MoneyExchanger.exchange(money.getAmount(), rate);
+        moneyViewer.setMoney(resultingMoney);
+        moneyViewer.show();
     }
 
-
-    private class ConvertButtonListener implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            System.out.println(view.getToCurrency());
-            System.out.println(view.getFromCurrency());
-            Number amount = new Number(view.getAmount());
-            Currency fromCurrency = CurrencySet.getInstance().search(view.getFromCurrency())[0];
-            Currency toCurrency = CurrencySet.getInstance().search(view.getToCurrency())[0];
-            ExchangeRate rate  = new ChangeRateHTTPLoader().load(fromCurrency, toCurrency);
-            Money money = MoneyExchanger.exchange(amount, rate);
-            view.setResult(money.getAmount().toString());
-        }
-
+    private Money getMoney() {
+        moneyDialog.show();
+        return moneyDialog.getMoney();
     }
 
-    private class AddButtonListener implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-        }
-
+    private Currency getCurrency() {
+        currencyDialog.show();
+        return currencyDialog.getCurrency();
     }
-
-    private class SubButtonListener implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-        }
-
-    }
-
+    
 }
