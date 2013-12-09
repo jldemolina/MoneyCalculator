@@ -10,7 +10,7 @@ import view.ui.CurrencyDialog;
 import view.ui.MoneyDialog;
 import view.ui.MoneyViewer;
 
-public class ChangeRateController {
+public class ChangeRateConsoleController {
 
     private final CurrencySetLoader currencySetLoader;
     private final ChangeRateLoader changeRateLoader;
@@ -18,7 +18,7 @@ public class ChangeRateController {
     private final MoneyViewer moneyViewer;
     private final CurrencyDialog currencyDialog;
 
-    public ChangeRateController(CurrencySetLoader currencySetLoader, ChangeRateLoader changeRateLoader, MoneyDialog moneyDialog, MoneyViewer moneyViewer, CurrencyDialog currencyDialog) {
+    public ChangeRateConsoleController(CurrencySetLoader currencySetLoader, ChangeRateLoader changeRateLoader, MoneyDialog moneyDialog, MoneyViewer moneyViewer, CurrencyDialog currencyDialog) {
         this.currencySetLoader = currencySetLoader;
         this.changeRateLoader = changeRateLoader;
         this.moneyDialog = moneyDialog;

@@ -1,9 +1,11 @@
-package view.ui;
+package view.ui.console;
 
 import java.util.Scanner;
 import model.Currency;
 import model.Money;
 import model.Number;
+import view.ui.CurrencyDialog;
+import view.ui.MoneyDialog;
 
 public class ConsoleMoneyDialog implements MoneyDialog {
     Money money;

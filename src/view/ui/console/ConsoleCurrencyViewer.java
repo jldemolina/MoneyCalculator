@@ -1,6 +1,7 @@
-package view.ui;
+package view.ui.console;
 
 import model.Currency;
+import view.ui.CurrencyViewer;
 
 public class ConsoleCurrencyViewer implements CurrencyViewer {
     
@@ -10,6 +11,10 @@ public class ConsoleCurrencyViewer implements CurrencyViewer {
         this.currency = currency;
     }
 
+    public ConsoleCurrencyViewer() {
+    }
+
+    
     @Override
     public void show() {
         System.out.println(currency);

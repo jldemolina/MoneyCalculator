@@ -1,8 +1,9 @@
-package view.ui;
+package view.ui.console;
 
 import java.util.Scanner;
 import model.Currency;
 import model.CurrencySet;
+import view.ui.CurrencyDialog;
 
 public class ConsoleCurrencyDialog implements CurrencyDialog {
 
@@ -11,7 +12,7 @@ public class ConsoleCurrencyDialog implements CurrencyDialog {
     @Override
     public void show() {
         while (true) {
-            System.out.println("Introduzca la divisa sobre la que quiere realizar la operación:");
+            System.out.println("Introduzca la divisa:");
             Scanner scanner = new Scanner(System.in);
             Currency[] currencies = CurrencySet.getInstance().search(scanner.nextLine());
 
