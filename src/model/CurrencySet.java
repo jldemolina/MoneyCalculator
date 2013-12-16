@@ -23,15 +23,15 @@ public class CurrencySet extends HashSet<Currency> {
                 return currency;
         return null;
     }
-    
-    public Currency[] search (String token) {
+
+    public Currency[] search(String token) {
         ArrayList<Currency> currencies = new ArrayList();
         for (Currency currency : this) {
-            if (token.equalsIgnoreCase(currency.getCode())) 
+            if (token.equalsIgnoreCase(currency.getCode()))
                 currencies.add(currency);
             if (token.equalsIgnoreCase(currency.getSymbol()))
                 currencies.add(currency);
-            if (currency.getName().toLowerCase().contains(token.toLowerCase())) 
+            if (currency.getName().toLowerCase().contains(token.toLowerCase()))
                 currencies.add(currency);
         }
         return currencies.toArray(new Currency[0]);

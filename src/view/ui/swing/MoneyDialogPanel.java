@@ -10,7 +10,7 @@ import model.Number;
 import view.ui.CurrencyDialog;
 import view.ui.MoneyDialog;
 
-public class MoneyDialogPanel extends JPanel implements MoneyDialog{
+public class MoneyDialogPanel extends JPanel implements MoneyDialog {
 
     private String amount;
     private CurrencyDialog currencyDialog;
@@ -18,7 +18,7 @@ public class MoneyDialogPanel extends JPanel implements MoneyDialog{
     public MoneyDialogPanel() {
         super(new FlowLayout(FlowLayout.LEFT));
     }
-    
+
     @Override
     public void show() {
         this.amount = "100";

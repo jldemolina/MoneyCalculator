@@ -8,7 +8,8 @@ import view.ui.CurrencyDialog;
 import view.ui.MoneyDialog;
 
 public class ConsoleMoneyDialog implements MoneyDialog {
-    Money money;
+
+    private Money money;
 
     @Override
     public void show() {
@@ -22,7 +23,7 @@ public class ConsoleMoneyDialog implements MoneyDialog {
     public Money getMoney() {
         return money;
     }
-    
+
     private Currency getCurrency() {
         CurrencyDialog dialog = new ConsoleCurrencyDialog();
         dialog.show();

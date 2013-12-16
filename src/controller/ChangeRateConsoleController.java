@@ -25,11 +25,11 @@ public class ChangeRateConsoleController {
         this.moneyViewer = moneyViewer;
         this.currencyDialog = currencyDialog;
     }
-    
+
     public void execute() {
         currencySetLoader.load();
         Money money = getMoney();
-        ExchangeRate rate  = changeRateLoader.load(money.getCurrency(), getCurrency());
+        ExchangeRate rate = changeRateLoader.load(money.getCurrency(), getCurrency());
         Money resultingMoney = MoneyExchanger.exchange(money.getAmount(), rate);
         moneyViewer.setMoney(resultingMoney);
         moneyViewer.show();
@@ -44,5 +44,5 @@ public class ChangeRateConsoleController {
         currencyDialog.show();
         return currencyDialog.getCurrency();
     }
-    
+
 }

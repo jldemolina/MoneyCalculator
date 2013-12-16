@@ -29,9 +29,8 @@ public class DateDialogPanel extends JPanel implements DateDialog {
                 new PropertyChangeListener() {
                     @Override
                     public void propertyChange(PropertyChangeEvent e) {
-                        if ("date".equals(e.getPropertyName())) {
+                        if ("date".equals(e.getPropertyName()))
                             date = (Date) e.getNewValue();
-                        }
                     }
                 });
 

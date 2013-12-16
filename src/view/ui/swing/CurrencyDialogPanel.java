@@ -12,16 +12,16 @@ import view.ui.CurrencyDialog;
 public class CurrencyDialogPanel extends JPanel implements CurrencyDialog {
 
     private Currency currency;
-    
+
     public CurrencyDialogPanel() {
         super(new FlowLayout(FlowLayout.LEFT));
     }
-    
+
     @Override
     public void show() {
         this.add(createComboBox());
     }
-    
+
     private JComboBox createComboBox() {
         final JComboBox comboBox = new JComboBox();
         fillComboBox(comboBox);
@@ -29,7 +29,8 @@ public class CurrencyDialogPanel extends JPanel implements CurrencyDialog {
 
             @Override
             public void itemStateChanged(ItemEvent ie) {
-                if(ie.getStateChange() != ItemEvent.SELECTED) return;
+                if (ie.getStateChange() != ItemEvent.SELECTED)
+                    return;
                 currency = CurrencySet.getInstance().search((String) comboBox.getSelectedItem())[0];
             }
         });
@@ -40,11 +41,10 @@ public class CurrencyDialogPanel extends JPanel implements CurrencyDialog {
     public Currency getCurrency() {
         return currency;
     }
-    
+
     private void fillComboBox(JComboBox comboBox) {
-        for (Currency currency : CurrencySet.getInstance()) {
+        for (Currency currency : CurrencySet.getInstance())
             comboBox.addItem(currency.getCode());
-        }
     }
 
 }

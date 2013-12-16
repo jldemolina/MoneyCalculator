@@ -41,7 +41,7 @@ public class Application {
         final CommandDictionary commandDictionary = new CommandDictionary();
         CurrencySetLoader currencySetLoader = new FileCurrencySetLoader(file);
         ChangeRateLoader changeRateLoader = new InternetChangeRateLoader();
-        
+
         currencySetLoader.load();;
         ActionListenerFactory factory = new ActionListenerFactory() {
 
@@ -56,14 +56,14 @@ public class Application {
                 };
             }
         };
-        
+
         final ApplicationFrame frame = new ApplicationFrame(factory);
-        
+
         commandDictionary.register("calculate", new CalculateCommand(
-                frame.getMoneyDialog(), 
-                frame.getCurrencyDialog(), 
+                frame.getMoneyDialog(),
+                frame.getCurrencyDialog(),
                 frame.getDateDialog(),
-                frame.getMoneyViewer(), 
+                frame.getMoneyViewer(),
                 changeRateLoader));
         commandDictionary.register("exit", new Command() {
 

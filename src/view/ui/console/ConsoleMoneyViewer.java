@@ -4,7 +4,7 @@ import model.Money;
 import view.ui.MoneyViewer;
 
 public class ConsoleMoneyViewer implements MoneyViewer {
-    
+
     private Money money;
 
     public ConsoleMoneyViewer(Money money) {
@@ -14,7 +14,6 @@ public class ConsoleMoneyViewer implements MoneyViewer {
     public ConsoleMoneyViewer() {
     }
 
-    
     @Override
     public void show() {
         System.out.println(money);
@@ -24,5 +23,5 @@ public class ConsoleMoneyViewer implements MoneyViewer {
     public void setMoney(Money money) {
         this.money = money;
     }
-    
+
 }

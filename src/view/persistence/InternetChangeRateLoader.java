@@ -24,7 +24,7 @@ public class InternetChangeRateLoader implements ChangeRateLoader {
         HTTParser parser = HTTParser.getInstance();
 
         String answer = "";
-        
+
         try {
             answer = parser.getHTTPAnswer(generateURL(fromCurrency, toCurrency, date));
         } catch (IOException ex) {

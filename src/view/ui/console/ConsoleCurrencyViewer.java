@@ -4,7 +4,7 @@ import model.Currency;
 import view.ui.CurrencyViewer;
 
 public class ConsoleCurrencyViewer implements CurrencyViewer {
-    
+
     private Currency currency;
 
     public ConsoleCurrencyViewer(Currency currency) {
@@ -14,7 +14,6 @@ public class ConsoleCurrencyViewer implements CurrencyViewer {
     public ConsoleCurrencyViewer() {
     }
 
-    
     @Override
     public void show() {
         System.out.println(currency);

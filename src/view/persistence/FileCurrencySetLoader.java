@@ -22,7 +22,7 @@ public class FileCurrencySetLoader implements CurrencySetLoader {
             BufferedReader reader = new BufferedReader(new FileReader(new File(file)));
             while (true) {
                 String line = reader.readLine();
-                if (line == null) 
+                if (line == null)
                     break;
                 String[] currency = line.trim().split(",");
                 CurrencySet.getInstance().add(new Currency(currency[2], currency[0], currency[1]));

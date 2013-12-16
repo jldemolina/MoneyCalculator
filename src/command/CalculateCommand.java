@@ -22,13 +22,13 @@ public class CalculateCommand extends Command {
         this.currencyDialog = currencyDialog;
         this.changeRateLoader = changeRateLoader;
         this.dateDialog = dateDialog;
-        this.moneyViewer = moneyViewer;    
+        this.moneyViewer = moneyViewer;
     }
 
     @Override
     public void execute() {
         Money money = moneyDialog.getMoney();
-        ExchangeRate rate  = changeRateLoader.load(money.getCurrency(), currencyDialog.getCurrency(), dateDialog.getDate());
+        ExchangeRate rate = changeRateLoader.load(money.getCurrency(), currencyDialog.getCurrency(), dateDialog.getDate());
         Money resultingMoney = MoneyExchanger.exchange(money.getAmount(), rate);
         moneyViewer.setMoney(resultingMoney);
         moneyViewer.show();

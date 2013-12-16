@@ -61,21 +61,21 @@ public class ApplicationFrame extends JFrame {
         panel.show();
         return panel;
     }
-    
+
     private JPanel createMoneyViewerPanel() {
         MoneyViewerPanel panel = new MoneyViewerPanel();
         moneyViewer = panel;
         panel.show();
         return panel;
     }
-    
+
     private JPanel createDateDialogPanel() {
         DateDialogPanel panel = new DateDialogPanel();
         dateDialog = panel;
         panel.show();
         return panel;
-    }    
-    
+    }
+
     private JPanel createToolbar() {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         panel.add(createCalculateButton());
@@ -110,7 +110,5 @@ public class ApplicationFrame extends JFrame {
     public DateDialog getDateDialog() {
         return dateDialog;
     }
-    
-    
-    
+
 }
