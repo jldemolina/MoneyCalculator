@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Number;
@@ -18,7 +20,7 @@ public class InternetChangeRateLoader implements ChangeRateLoader {
     }
 
     @Override
-    public ExchangeRate load(Currency fromCurrency, Currency toCurrency, Calendar date) {
+    public ExchangeRate load(Currency fromCurrency, Currency toCurrency, Date date) {
         HTTParser parser = HTTParser.getInstance();
 
         String answer = "";
@@ -33,11 +35,11 @@ public class InternetChangeRateLoader implements ChangeRateLoader {
 
     @Override
     public ExchangeRate load(Currency fromCurrency, Currency toCurrency) {
-        return load(fromCurrency, toCurrency, Calendar.getInstance());
+        return load(fromCurrency, toCurrency, new Date());
 
     }
 
-    private URL generateURL(Currency fromCurrency, Currency toCurrency, Calendar date) {
+    private URL generateURL(Currency fromCurrency, Currency toCurrency, Date date) {
         try {
             return new URL(URL + formatDate(date) + "/" + fromCurrency.getCode() + "/" + toCurrency.getCode());
         } catch (MalformedURLException ex) {
@@ -46,8 +48,9 @@ public class InternetChangeRateLoader implements ChangeRateLoader {
         return null;
     }
 
-    private String formatDate(Calendar date) {
-        return date.get(Calendar.YEAR) + "-" + date.get(Calendar.MONTH) + "-" + date.get(Calendar.DAY_OF_MONTH);
+    private String formatDate(Date date) {
+        Calendar calendar = new GregorianCalendar();
+        calendar.setTime(date);
+        return calendar.get(Calendar.YEAR) + "-" + calendar.get(Calendar.MONTH) + "-" + calendar.get(Calendar.DAY_OF_MONTH);
     }
-
 }

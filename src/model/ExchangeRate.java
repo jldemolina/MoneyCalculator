@@ -1,21 +1,21 @@
 package model;
 
-import java.util.Calendar;
+import java.util.Date;
 
 public class ExchangeRate {
 
     private final Number rate;
     private final Currency fromCurrency;
     private final Currency toCurrency;
-    private final Calendar date;
+    private final Date date;
 
-    public ExchangeRate(Number rate, Currency fromCurrency, Currency toCurrency, Calendar date) {
+    public ExchangeRate(Number rate, Currency fromCurrency, Currency toCurrency, Date date) {
         this.rate = rate;
         this.fromCurrency = fromCurrency;
         this.toCurrency = toCurrency;
         this.date = date;
     }
-    
+
     public Number getRate() {
         return rate;
     }
@@ -28,10 +28,7 @@ public class ExchangeRate {
         return toCurrency;
     }
 
-    public Calendar getDate() {
+    public Date getDate() {
         return date;
     }
-    
-    
-
 }
