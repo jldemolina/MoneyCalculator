@@ -1,8 +1,8 @@
-ImageViewer
+MoneyCalculator
 ===============
 
 Este proyecto ha sido creado con el fin de adquirir los conocimientos básicos de la arquitectura del software.
-Se trata de un visor de imagenes que permite pasar de una a otra a partir de la interacción con dos botonoes, o directamente mediante el arrastre de las mismas.
+Conversor de divisas que permite la conversión de las diferentes monedas entre si, a partir de un determinado valor y una fecha específica.
 
 Principios de diseño respetados
 ===============================
