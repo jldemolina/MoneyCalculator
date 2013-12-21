@@ -1,8 +1,8 @@
-MoneyCalculator
+ImageViewer
 ===============
 
 Este proyecto ha sido creado con el fin de adquirir los conocimientos básicos de la arquitectura del software.
-Se trata de un conversor de divisas que permite la conversión de las diferentes monedas entre si, a partir de un determinado valor y una fecha específica. 
+Se trata de un visor de imagenes que permite pasar de una a otra a partir de la interacción con dos botonoes, o directamente mediante el arrastre de las mismas.
 
 Principios de diseño respetados
 ===============================
@@ -32,5 +32,8 @@ Patrones de diseño utilizados
 Este patrón suele establecer en escenarios donde se necesite encapsular una petición dentro de un objeto, permitiendo parametrizar a los clientes con distintas peticiones, encolarlas, guardarlas en un registro de sucesos o implementar un mecanismo de deshacer/repetir.
 
 <b>Dependency injection:</b> Patrón de diseño orientado a objetos, en el que se suministran objetos a una clase en lugar de ser la propia clase quien cree el objeto. El término fue acuñado por primera vez por Martin Fowler.
+
+<b>Singleton:</b> La idea del patrón Singleton es proveer un mecanismo para limitar el número de instancias de una clase. Por lo tanto el mismo objeto es siempre compartido por distintas partes del código. Puede ser visto como una solución más elegante para una variable global porque los datos son abstraídos por detrás de la interfaz que publica la clase singleton.
+Dicho de otra manera, esta patrón busca garantizar que una clase sólo tenga una instancia y proporcionar un punto de acceso global a ella.
 
 <b>Con lo nombrado anteriormente, se ha conseguido la completa cohesión y el inestimable acoplamiento del producto final.</b>
