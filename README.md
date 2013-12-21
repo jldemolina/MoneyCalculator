@@ -2,7 +2,7 @@ MoneyCalculator
 ===============
 
 Este proyecto ha sido creado con el fin de adquirir los conocimientos básicos de la arquitectura del software.
-Conversor de divisas que permite la conversión de las diferentes monedas entre si, a partir de un determinado valor y una fecha específica.
+Así mismo, estamos ante un conversor de divisas que permite la conversión de las diferentes monedas entre si, a partir de un determinado valor y una fecha específica.
 
 Principios de diseño respetados
 ===============================
@@ -28,8 +28,7 @@ OCP es la respuesta a la pregunta que hacíamos anteriormente, ya que argumenta 
 Patrones de diseño utilizados
 =============================
 <b>Command:</b> Encapsula un mensaje como un objeto. Especifica una forma simple de separar la ejecución de un comando, del entorno que generó dicho comando. Permite solicitar una operación a un objeto sin conocer el contenido ni el receptor real de la misma. Si bien estas definiciones parecen un tanto ambigüas, sería oportuno volver a leerlas luego de entender el ejemplo.
-
-Este patrón suele establecer en escenarios donde se necesite encapsular una petición dentro de un objeto, permitiendo parametrizar a los clientes con distintas peticiones, encolarlas, guardarlas en un registro de sucesos o implementar un mecanismo de deshacer/repetir.
+Este patrón se suele establecer en escenarios donde se necesite encapsular una petición dentro de un objeto, permitiendo parametrizar a los clientes con distintas peticiones, encolarlas, guardarlas en un registro de sucesos o implementar un mecanismo de deshacer/repetir.
 
 <b>Dependency injection:</b> Patrón de diseño orientado a objetos, en el que se suministran objetos a una clase en lugar de ser la propia clase quien cree el objeto. El término fue acuñado por primera vez por Martin Fowler.
 
