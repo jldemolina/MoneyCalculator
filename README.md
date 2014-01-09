@@ -1,6 +1,8 @@
 MoneyCalculator
 ===============
 
+NOTA PREVIA: Esta aplicación utiliza una API de internet para realizar las conversiones de las divisas. el módulo es totalmente sustituible.
+
 Este proyecto ha sido creado con el fin de adquirir los conocimientos básicos de la arquitectura del software.
 Así mismo, estamos ante un conversor de divisas que permite la conversión de las diferentes monedas entre si, a partir de un determinado valor y una fecha específica.
 
