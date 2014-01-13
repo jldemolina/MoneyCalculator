@@ -1,3 +1,5 @@
+Euro,EUR,€
+United States Dollar,USD,$
 Albania Lek,ALL,Lek
 Afghanistan Afghani,AFN,؋
 Argentina Peso,ARS,$
@@ -31,7 +33,6 @@ East Caribbean Dollar,XCD,$
 Egypt Pound,EGP,£
 El Salvador Colon,SVC,$
 Estonia Kroon,,EEK,kr
-Euro,EUR,€
 Falkland Islands Pound,FKP,£
 Fiji Dollar,FJD,$
 Ghana Cedis,GHC,¢
@@ -105,7 +106,6 @@ Turkey Lira,TRL,₤
 Tuvalu Dollar,TVD,$		 
 Ukraine Hryvna,UAH,₴
 United Kingdom Pound,GBP,£
-United States Dollar,USD,$ 
 Uruguay Peso,UYU,$U
 Uzbekistan Som,UZS,лв
 Venezuela Bolivar,VEF,Bs

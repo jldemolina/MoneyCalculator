@@ -1,14 +1,14 @@
 package view.ui.swing;
 
-import java.awt.FlowLayout;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
 import model.Money;
 import model.Number;
 import view.ui.CurrencyDialog;
 import view.ui.MoneyDialog;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 public class MoneyDialogPanel extends JPanel implements MoneyDialog {
 
@@ -21,7 +21,7 @@ public class MoneyDialogPanel extends JPanel implements MoneyDialog {
 
     @Override
     public void show() {
-        this.amount = "100";
+        this.amount = "0";
         this.createComponents();
     }
 

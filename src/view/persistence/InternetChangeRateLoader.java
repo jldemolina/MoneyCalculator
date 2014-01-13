@@ -1,5 +1,9 @@
 package view.persistence;
 
+import model.Currency;
+import model.ExchangeRate;
+import model.Number;
+
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -8,9 +12,6 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.Number;
-import model.Currency;
-import model.ExchangeRate;
 
 public class InternetChangeRateLoader implements ChangeRateLoader {
 
@@ -51,6 +52,6 @@ public class InternetChangeRateLoader implements ChangeRateLoader {
     private String formatDate(Date date) {
         Calendar calendar = new GregorianCalendar();
         calendar.setTime(date);
-        return calendar.get(Calendar.YEAR) + "-" + calendar.get(Calendar.MONTH) + "-" + calendar.get(Calendar.DAY_OF_MONTH);
+        return calendar.get(Calendar.YEAR) + "-" + (calendar.get(Calendar.MONTH)+1) + "-" + calendar.get(Calendar.DAY_OF_MONTH);
     }
 }
