@@ -1,16 +1,13 @@
 package view.ui.swing;
 
 import command.ActionListenerFactory;
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 import view.ui.CurrencyDialog;
 import view.ui.DateDialog;
 import view.ui.MoneyDialog;
 import view.ui.MoneyViewer;
+
+import javax.swing.*;
+import java.awt.*;
 
 public class ApplicationFrame extends JFrame {
 
@@ -23,7 +20,7 @@ public class ApplicationFrame extends JFrame {
     public ApplicationFrame(ActionListenerFactory actionListenerFactory) {
         super("Money calculator");
         this.factory = actionListenerFactory;
-        this.setSize(900, 140);
+        this.setSize(900, 110);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.createComponents();
@@ -78,6 +75,8 @@ public class ApplicationFrame extends JFrame {
 
     private JPanel createToolbar() {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        panel.add(new JLabel(" Not available to convert between all currencies," +
+                " but yes the conversion of the most popular (Try USD to EUR) "));
         panel.add(createCalculateButton());
         panel.add(createExitButton());
         return panel;
