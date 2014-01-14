@@ -37,4 +37,6 @@ Este patrón se suele establecer en escenarios donde se necesite encapsular una 
 <b>Singleton:</b> La idea del patrón Singleton es proveer un mecanismo para limitar el número de instancias de una clase. Por lo tanto el mismo objeto es siempre compartido por distintas partes del código. Puede ser visto como una solución más elegante para una variable global porque los datos son abstraídos por detrás de la interfaz que publica la clase singleton.
 Dicho de otra manera, esta patrón busca garantizar que una clase sólo tenga una instancia y proporcionar un punto de acceso global a ella.
 
-<b>Con lo nombrado anteriormente, se ha conseguido la completa cohesión y el inestimable acoplamiento del producto final.</b>
+<b>Con lo nombrado anteriormente, se ha conseguido la completa cohesión y el correcto acoplamiento del producto final.</b>
+
+Tanto cohesión como acoplamiento miden la relación entre los elementos de los programas informáticos. La cohesión mide cómo los componentes de un módulo de software o una clase de objetos de software se relacionan entre sí (Nos dice que la información que almacena una clase debe de ser coherente y debe estar (en la medida de lo posible) relacionada con la clase.). El acoplamiento mide la relación entre clases y módulos separados (Es la idea de tener las clases lo menos ligadas entre sí que se pueda. De tal forma que en caso de producirse una modificación en alguna de ellas, se tenga la mínima repercusión posible en el resto de clases, potenciando la reutilización, y disminuyendo la dependencia entre las clases). 
